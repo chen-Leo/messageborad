@@ -1,0 +1,56 @@
+#
+#    initialSize: 10  #初始化的时候有几条连接
+#    minIdle: 10  #连接池中最少保持几条连接
+#    maxActive: 100  #连接池中最大保持几条连接
+#    maxWait: 60000
+#    timeBetweenEvictionRunsMillis: 60000
+#    minEvictableIdleTimeMillis: 300000
+#    validationQuery: SELECT 'x'
+#    testWhileIdle: true
+#    testOnBorrow: false
+#    testOnReturn: false
+#    poolPreparedStatements: true
+#    maxPoolPreparedStatementPerConnectionSize: 200   #PreparedStatement缓存大小
+#    filters: stat,wall          #stat:web监控   wall：sql防火墙
+#    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+#    useGlobalDataSourceStat: true
+#    loginUsername: root
+#    loginPassword: zv9VJ11111
+#    test-while-idle: true
+#    driver-class-name: com.mysql.cj.jdbc.Driver    #jdbc驱动名，这个一定要有
+#  thymeleaf:
+#    cache: false  #模板是否使用缓存，本地开发的时候建议设置为false，部署后设置为true
+#    prefix: classpath:/templates/    #模板的路径前缀
+#    suffix: .html  #模板后缀名
+#    encoding: UTF-8  #模板的编码
+#    mode: HTML5  #模板是html5
+#    check-template: true
+#  http:
+#    encoding:
+#      force: true
+#      charset: UTF-8
+#      enabled: true
+#  servlet:
+#    multipart:
+#      max-file-size: 5MB
+#      max-request-size: 10MB
+#  redis:
+#    database: 0  #默认使用0号redis数据库
+#    host: localhost  #redis的域名/ip，localhost表示是本地redis
+#    port: 6379  #redis端口号
+#    password:  #redis密码，留空表示连接的redis密码为空
+#    jedis:  #redis连接池jedis配置
+#      pool:
+#        max-active: 30
+#        max-wait: -1
+#        max-idle: 30
+#        min-idle: 2
+#    timeout: 1000
+#  resources:  #静态资源路径设置，springboot将会在设置的几个值中以从前到后顺序查找静态资源
+#    static-locations: classpath:/META-INF/resources/,classpath:/resources,classpath:/static/,classpath:/public/
+#server:  #内嵌tomcat的配置
+#  tomcat:
+#    uri-encoding: UTF-8
+#  port: 8080
+#  servlet:
+#    context-path: /demo
